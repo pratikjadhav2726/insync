@@ -10,7 +10,7 @@ listening = True
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
     
     server_socket.bind((HOST, PORT))
-    #print(socket.getaddrinfo())
+    print(socket.gethostname())
     server_socket.listen(5)
     client_socket, client_addr = server_socket.accept()
 
