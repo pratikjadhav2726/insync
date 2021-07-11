@@ -14,7 +14,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
     server_socket.listen(5)
     client_socket, client_addr = server_socket.accept()
 
-    print(client_socket.recv(32).decode("utf-8"))
+    #print(client_socket.recv(32).decode("utf-8"))
     client_socket.send(bytes("hello", "utf-8"))
 
     '''while listening:

@@ -1,10 +1,11 @@
 import socket
 
 HEADER_LENGTH = 8
-HOST = "https://insyncpy.herokuapp.com" #"127.0.0.1" "wss://echo.websocket.org" 
-PORT = 8888
+HOST = socket.gethostbyname("wss://localhost:5001/ws")
+PORT = 80
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+    print(HOST)
     client_socket.connect((HOST, PORT))
 
     sending_message = "Hey server!"
@@ -20,4 +21,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     message = client_socket.recv(message_length).decode("utf-8")
     #message = client_socket.recv(1024)
 
-    print(f"{message}")
+    print(message)
