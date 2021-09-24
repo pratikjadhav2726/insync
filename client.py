@@ -20,5 +20,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     message_length = 1024
     message = client_socket.recv(message_length).decode("utf-8")
     #message = client_socket.recv(1024)
-
+    print("Hi")
     print(message)
